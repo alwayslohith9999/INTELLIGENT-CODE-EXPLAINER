@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C Error Explainer</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+
+<body>
+  <header class="top">
+    <div>
+      <h1>Intelligent C Error Explainer</h1>
+      <p class="sub">
+
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel editor-panel">
+      <label for="code">C source (<code>.c</code>, C11)</label>
+      <textarea id="code" spellcheck="false"
+        placeholder="#include &lt;stdio.h&gt;&#10;&#10;int main(void) {&#10;  printf(&quot;Hello&quot;)&#10;  return 0;&#10;}"></textarea>
+      <div class="actions">
+        <button type="button" id="analyze" class="primary">Analyze errors</button>
+        <span id="status" class="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="panel results-panel">
+      <h2>Compiler diagnostics</h2>
+      <p id="compile-badge" class="badge hidden"></p>
+      <ul id="diag-list" class="diag-list"></ul>
+      <pre id="gcc-raw" class="raw hidden"></pre>
+
+      <h2>Runtime</h2>
+      <p id="run-badge" class="badge hidden"></p>
+      <p id="run-meta" class="run-meta muted"></p>
+      <pre id="run-raw" class="raw hidden"></pre>
+
+      <h2>AI explanation</h2>
+      <div id="ai-block" class="ai-block">
+
+        <p id="ai-summary" class="ai-summary hidden"></p>
+        <p id="ai-runtime-summary" class="ai-runtime hidden"></p>
+        <ul id="ai-issues" class="ai-issues"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/app.js" type="module"></script>
+</body>
+
+</html>
